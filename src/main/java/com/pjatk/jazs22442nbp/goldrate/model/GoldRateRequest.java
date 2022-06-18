@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @ApiModel(value = "Gold Rate Request", description = "A request of gold rate")
@@ -28,12 +29,12 @@ public class GoldRateRequest {
     private Double averageRate;
 
     @ApiModelProperty(value = "The date of the request")
-    private LocalDate requestDate;
+    private LocalDateTime requestDate;
 
     public GoldRateRequest() {
     }
 
-    public GoldRateRequest(GoldType goldType, LocalDate startDate, LocalDate endDate, Double averageRate, LocalDate requestDate) {
+    public GoldRateRequest(GoldType goldType, LocalDate startDate, LocalDate endDate, Double averageRate, LocalDateTime requestDate) {
         this.goldType = goldType;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -81,11 +82,11 @@ public class GoldRateRequest {
         this.averageRate = averageRate;
     }
 
-    public LocalDate getRequestDate() {
+    public LocalDateTime getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(LocalDate requestDate) {
+    public void setRequestDate(LocalDateTime requestDate) {
         this.requestDate = requestDate;
     }
 }

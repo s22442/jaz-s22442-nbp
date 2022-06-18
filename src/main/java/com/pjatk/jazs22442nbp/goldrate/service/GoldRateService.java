@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class GoldRateService {
     public Double getGoldRateByDates(String startDateStr, String endDateStr) {
         LocalDate startDate = LocalDate.parse(startDateStr, this.dateTimeFormatter);
         LocalDate endDate = LocalDate.parse(endDateStr, this.dateTimeFormatter);
-        LocalDate requestDate = LocalDate.now();
+        LocalDateTime requestDate = LocalDateTime.now();
 
         GoldRate[] goldRates = this.restTemplate.exchange(NBP_URL + startDateStr + "/" + endDateStr, HttpMethod.GET, null, GoldRate[].class).getBody();
 
