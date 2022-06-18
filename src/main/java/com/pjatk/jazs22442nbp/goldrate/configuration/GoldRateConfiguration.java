@@ -21,9 +21,9 @@ public class GoldRateConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .select()
-            .paths(PathSelectors.any())
-            .apis(RequestHandlerSelectors.basePackage("com.pjatk.jazs22442nbp"))
-            .build();
+                .select()
+                .paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.pjatk.jazs22442nbp"))
+                .build();
     }
 }
